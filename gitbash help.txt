@@ -1,0 +1,9 @@
+1. nyisd meg a repository mappáját (látnod kell a ui/design mappákat, READ ME fájlt, stb)
+2. jobb klikk a mappába és "Open GitBash Here"
+3. a kékben látod a "(main)" feliratot akkor jól nyitottad meg a repositoryt
+4. töltsd le a változtatásokat, ha vannak: git pull
+5. a fájlok státuszát, főleg ha új fájlokat hoztál létre vagy szerkesztettél valamit, ezzel csekkolod le: git status
+    5.1. az újonnan létrehozott fájlok az "untracked" alatt vannak, a szerkesztett fájlok a a "uncommitted/changes not staged" alatt lesznek.
+6. a változtatásokat (vagy új fájlokat) a következő parancssal tudod hozzáadni a következő commithoz: git add "filenev" VAGY git add . (összes változtatás hozzáadása)
+7. a változtatásokat hitelesítsd és feltöltésre készítsd fel: git commit -m "szöveg" (a szöveg legyen reprezentatív arra hogy mit csináltál a fájl(okkal))
+8. a végleges feltöltés, és a fájlok feltöltése a github repositoryba: git push
