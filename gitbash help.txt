@@ -4,6 +4,7 @@
 4. töltsd le a változtatásokat, ha vannak: git pull
 5. a fájlok státuszát, főleg ha új fájlokat hoztál létre vagy szerkesztettél valamit, ezzel csekkolod le: git status
     5.1. az újonnan létrehozott fájlok az "untracked" alatt vannak, a szerkesztett fájlok a a "uncommitted/changes not staged" alatt lesznek.
-6. a változtatásokat (vagy új fájlokat) a következő parancssal tudod hozzáadni a következő commithoz: git add "filenev" VAGY git add . (összes változtatás hozzáadása)
-7. a változtatásokat hitelesítsd és feltöltésre készítsd fel: git commit -m "szöveg" (a szöveg legyen reprezentatív arra hogy mit csináltál a fájl(okkal))
-8. a végleges feltöltés, és a fájlok feltöltése a github repositoryba: git push
+6. a változtatásokat (vagy új fájlokat) a következő parancssal tudod hozzáadni a következő commithoz: git add "filenev"
+7. ha valamilyen fájlt nem akarsz feltölteni, így tudod visszavonni a commitból: git restore --staged "filenev"
+8. a változtatásokat hitelesítsd és feltöltésre készítsd fel: git commit -m "szöveg" (a szöveg legyen reprezentatív arra hogy mit csináltál a fájl(okkal))
+9. a végleges feltöltés, és a fájlok feltöltése a github repositoryba: git push
