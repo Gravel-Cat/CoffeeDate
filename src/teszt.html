@@ -13,6 +13,7 @@
             font-family: Verdana, sans-serif;
 
         }
+
         h1 {
             color: #FEFAE0;
             text-align: center;
@@ -20,37 +21,74 @@
 
         }
 
+        .login-box {
+          margin: auto;
+          background-color: rgba(0, 0, 0, 0.6);
+          padding: 40px;
+          border-radius: 10px;
+          text-align: center;
+          color: white;
+          width: 300px;
+        }
+
+        .login-box h1 {
+          margin-bottom: 30px;
+          font-size: 2rem;
+        }
+
+        .login-box input {
+          width: 100%;
+          padding: 10px;
+          margin: 10px 0;
+          border-radius: 5px;
+          border: none;
+          font-size: 1rem;
+        }
+
+        .login-box button {
+          width: 100%;
+          padding: 10px;
+          margin-top: 20px;
+          border-radius: 5px;
+          border: none;
+          background-color: #ff9800;
+          font-size: 1rem;
+          cursor: pointer;
+          color: black;
+          font-weight: bold;
+        }
+
+        .login-box button:hover {
+          background-color: #e68900;
+        }
     </style>
 </head>
 <body>
-        <button onclick="ujAblak()">Új ablak
-        </button>
-        <script>
-            function ujAblak() {
-              const win = window.open('', '_blank', 'width=600,height=400');
 
-              win.document.write(`
-                <!DOCTYPE html>
-                <html lang="hu">
-                <head>
-                  <meta charset="UTF-8">
-                  <title>Tanulási felület</title>
-                  <style>
-                    body {
-                      margin: 0;
-                      height: 100vh;
-                      background-image: url('hatter.jpg');
-                      background-size: cover;
-                      background-position: center;
-                    }
-                  </style>
-                </head>
-                <body>
-                </body>
-                </html>
-              `);
-            }
-        </script>
+<div class="login-box">
+    <h1>Belépés</h1>
+    <input type="text" placeholder="Felhasználónév" id="username">
+    <input type="password" placeholder="Jelszó" id="password">
+    <button onclick="belep()">Belépés</button>
+</div>
+
+<script>
+    function belep() {
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+
+      if(user === '' || pass === '') {
+        alert('Kérlek, töltsd ki mindkét mezőt!');
+        return;
+      }
+
+      // Csak vizuális visszajelzés
+      alert('Sikeres belépés: ' + user);
+
+      // Itt át lehet irányítani pl. a studyboard felületre:
+      // window.location.href = "studyboard.html";
+    }
+</script>
 
 </body>
 </html>
