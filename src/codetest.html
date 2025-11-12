@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <style>
+        form {text-align: center;}
+        img {margin: 10px;}
+        input[type="radio"] {margin: 10px 60px;}
+    </style>
+</head>
+<body>
+<form action>
+    <label for="username">Felhasználónév:</label>
+    <input type="text" id="username" name="username" placeholder="Írd be a neved!" autocomplete="off" maxlength="12"><br>
+    <label for="gender">Nem:</label>
+    <input type="text" id="gender" name="gender" placeholder="Írd be a nemed!" autocomplete="off" maxlength="12"><br>
+    <label for="course">Szak:</label>
+    <input type="text" id="course" name="course" placeholder="Írd be a szakod!" autocomplete="off" maxlength="12"><br>
+    <label for="drink">Válassz egy italt:</label><br>
+    <img src="../doc/ui/coffee_placeholder.png" alt="kávé">
+    <img src="../doc/ui/coffee_placeholder.png" alt="tea"><br>
+    <input type="radio" id="drink" name="drink" value="coffee" checked>
+    <input type="radio" id="drink" name="drink" value="tea"><br><br>
+    <input type="submit" value="Kész!">
+</form>
+</body>
+</html>

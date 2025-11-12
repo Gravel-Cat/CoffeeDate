@@ -1,94 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <title>CoffeeDate - Tanulj Kávésan</title>
+    <title>CoffeeDate - Tanulj Kávésan!</title>
     <style>
+        h1 {
+            color: #FEFAE0;
+            font-family: Verdana;
+            font-weight: bold;
+            text-align: center;
+        }
         body {
             background-color: #44270D;
             background-image: url("../doc/ui/bg_bean.png");
             background-size: auto;
-            margin: 0;
-            padding: 0;
-            font-family: Verdana, sans-serif;
-
+            font-family: Verdana;
         }
-
-        h1 {
+        form {
             color: #FEFAE0;
+            font-family: Verdana;
+            font-weight: bold;
             text-align: center;
-            margin-top: 100px;
-
         }
-
-        .login-box {
-          margin: auto;
-          background-color: rgba(0, 0, 0, 0.6);
-          padding: 40px;
-          border-radius: 10px;
-          text-align: center;
-          color: white;
-          width: 300px;
-        }
-
-        .login-box h1 {
-          margin-bottom: 30px;
-          font-size: 2rem;
-        }
-
-        .login-box input {
-          width: 100%;
-          padding: 10px;
-          margin: 10px 0;
-          border-radius: 5px;
-          border: none;
-          font-size: 1rem;
-        }
-
-        .login-box button {
-          width: 100%;
-          padding: 10px;
-          margin-top: 20px;
-          border-radius: 5px;
-          border: none;
-          background-color: #ff9800;
-          font-size: 1rem;
-          cursor: pointer;
-          color: black;
-          font-weight: bold;
-        }
-
-        .login-box button:hover {
-          background-color: #e68900;
-        }
+        img {margin: 10px;}
+        input[type="radio"] {margin: 10px 60px;}
     </style>
 </head>
 <body>
-
-<div class="login-box">
-    <h1>Belépés</h1>
-    <input type="text" placeholder="Felhasználónév" id="username">
-    <input type="password" placeholder="Jelszó" id="password">
-    <button onclick="belep()">Belépés</button>
-</div>
-
-<script>
-    function belep() {
-      const user = document.getElementById('username').value;
-      const pass = document.getElementById('password').value;
-
-      if(user === '' || pass === '') {
-        alert('Kérlek, töltsd ki mindkét mezőt!');
-        return;
-      }
-
-      // Csak vizuális visszajelzés
-      alert('Sikeres belépés: ' + user);
-
-      // Itt át lehet irányítani pl. a studyboard felületre:
-      // window.location.href = "studyboard.html";
-    }
-</script>
-
+    <h1>CoffeeDate - Tanulj Kávésan!</h1>
+    <form action>
+        <label for="username">Felhasználónév:</label>
+        <input type="text" id="username" name="username" placeholder="Írd be a neved!" autocomplete="off" maxlength="12"><br>
+        <label for="gender">Nem:</label>
+        <input type="text" id="gender" name="gender" placeholder="Írd be a nemed!" autocomplete="off" maxlength="12"><br>
+        <label for="course">Szak:</label>
+        <input type="text" id="course" name="course" placeholder="Írd be a szakod!" autocomplete="off" maxlength="12"><br>
+        <label for="drink">Válassz egy italt:</label><br>
+        <img src="../doc/ui/coffee_placeholder.png" alt="kávé">
+        <img src="../doc/ui/coffee_placeholder.png" alt="tea"><br>
+        <input type="radio" id="drink" name="drink" value="coffee" checked>
+        <input type="radio" id="drink" name="drink" value="tea"><br><br>
+        <input type="submit" value="Kész!">
+    </form>
 </body>
 </html>
