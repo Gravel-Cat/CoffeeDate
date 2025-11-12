@@ -3,44 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>CoffeeDate - Tanulj Kávésan!</title>
-    <style>
-        h1 {
-            color: #FEFAE0;
-            font-family: Verdana;
-            font-weight: bold;
-            text-align: center;
-        }
-        body {
-            background-color: #44270D;
-            background-image: url("../doc/ui/bg_bean.png");
-            background-size: auto;
-            font-family: Verdana;
-        }
-        form {
-            color: #FEFAE0;
-            font-family: Verdana;
-            font-weight: bold;
-            text-align: center;
-        }
-        img {margin: 10px;}
-        input[type="radio"] {margin: 10px 60px;}
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>CoffeeDate - Tanulj Kávésan!</h1>
-    <form action>
-        <label for="username">Felhasználónév:</label>
-        <input type="text" id="username" name="username" placeholder="Írd be a neved!" autocomplete="off" maxlength="12"><br>
-        <label for="gender">Nem:</label>
-        <input type="text" id="gender" name="gender" placeholder="Írd be a nemed!" autocomplete="off" maxlength="12"><br>
-        <label for="course">Szak:</label>
-        <input type="text" id="course" name="course" placeholder="Írd be a szakod!" autocomplete="off" maxlength="12"><br>
-        <label for="drink">Válassz egy italt:</label><br>
-        <img src="../doc/ui/coffee_placeholder.png" alt="kávé">
-        <img src="../doc/ui/coffee_placeholder.png" alt="tea"><br>
-        <input type="radio" id="drink" name="drink" value="coffee" checked>
-        <input type="radio" id="drink" name="drink" value="tea"><br><br>
-        <input type="submit" value="Kész!">
-    </form>
+    <h4>Üdvözlünk a CoffeeDate oldalán! Ha először vagy itt, kérlek hozz létre egy profilt!</h4>
+
+    <div class="loginbox">
+        <label class="logintext" for="username">Felhasználónév:</label>
+        <input class="logininput" type="text" id="username" name="username" autocomplete="off" maxlength="12"><br>
+
+        <label class="logintext" for="gender">Nem:</label>
+        <input class="logininput" type="text" id="gender" name="gender" autocomplete="off" maxlength="12"><br>
+
+        <label class="logintext" for="course">Szak:</label>
+        <input class="logininput" type="text" id="course" name="course" autocomplete="off" maxlength="12"><br>
+
+        <label class="logintext" for="drink">Válassz egy italt:</label><br>
+        <img class="logintext" src="../doc/ui/coffee_placeholder.png" alt="kávé">
+        <img class="logintext" src="../doc/ui/coffee_placeholder.png" alt="tea"><br>
+        <input class="loginbutton" type="radio" id="drink" name="drink" value="coffee" checked>
+        <input class="loginbutton" type="radio" id="drink" name="drink" value="tea"><br>
+
+        <input class="loginbutton" type="submit" value="Kész!">
+    </div>
+
+    <h4>Vagy már van profilod? Akkor lépj be a kódoddal:</h4>
+
+    <div class="loginbox">
+        <input class="logininput" type="text">
+    </div>
+
 </body>
 </html>
