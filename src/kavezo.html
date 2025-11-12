@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>CoffeeDate - Tanulj Kávésan!</title>
-    <style>
-        h1 {
-            color: #FEFAE0;
-            font-family: Verdana;
-            font-weight: bold;
-            text-align: center;
-        }
-        body {
-            background-color: #44270D;
-            background-image: url("../doc/ui/bg_bean.png");
-            background-size: auto;
-            font-family: Verdana;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>CoffeeDate - Tanulj Kávésan!</h1>
-    <img src="../doc/ui/background_placeholder.png">
+
+    <div class="stage_center" id="stage">
+        <img src="../doc/ui/coffee_placeholder.png" id="coffee" class="coffee" alt="Kávé NPC">
+    </div>
+
+    <div class="controls">
+        <div class="square-btn" id="fiokBtn">Fiók</div>
+        <div class="square-btn" id="tanulasBtn">Tanulás</div>
+    </div>
+
+    <script src="kavezo.js"></script>
+    <script>
+        // gombok
+        document.getElementById('fiokBtn').onclick = () => alert('Fiók megnyitása (helyőrző)');
+        document.getElementById('tanulasBtn').onclick = () => alert('Tanulás oldal (helyőrző)');
+    </script>
 </body>
 </html>
