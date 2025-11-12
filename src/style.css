@@ -1,0 +1,111 @@
+h1 {
+    color: #FEFAE0;
+    font-family: Verdana;
+    font-weight: bold;
+    text-align: center;
+}
+
+h4 {
+    color: #FEFAE0;
+    font-family: Verdana;
+    font-weight: bold;
+    text-align: center;
+}
+
+body {
+    background-color: #44270D;
+    background-image: url("../doc/ui/bg_bean.png");
+    background-size: auto;
+    font-family: Verdana;
+}
+
+.logintext {
+    color: #87551D;
+    font-family: Verdana;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+}
+
+.loginbox {
+    background-color: #FEFAE0;
+    margin: 0 500px;
+    padding: 10px;
+    text-align: center;
+}
+
+.logininput {
+    align: center;
+    color: #87551D;
+    font-family: Verdana;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+    background-color: #C3A87F;
+    border: none;
+}
+
+.logininput:hover {
+    background-color: #87551D;
+    color: #44270D;
+}
+
+.loginbutton {
+    color: #87551D;
+    font-family: Verdana;
+    font-weight: bold;
+    margin: 0 40px;
+    background-color: #C3A87F;
+    border: none;
+}
+.loginbutton:hover {
+    background-color: #87551D;
+    color: #44270D;
+}
+
+.stage_center {
+    width: 853px;
+    height: 480px;
+    background-image: url("../doc/ui/background_placeholder.png");
+    position: relative;
+    margin: auto;
+}
+
+.stage_right {
+    width: 853px;
+    height: 480px;
+    background-image: url("../doc/ui/background_placeholder.png");
+    position: relative;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.coffee {
+    position: absolute;
+    transform-origin: center;
+    transition: transform 0.1s linear;
+}
+
+.controls {
+    width: 212px;
+    position: relative;
+    margin: 10px auto;
+    display: flex;
+    gap: 12px;
+}
+
+.square-btn {
+    width: 100px;
+    height: 100px;
+    background-image: url("../doc/ui/button_placeholder.png");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 16px;
+    transition: transform 0.1s;
+}
+
+.square-btn:hover {
+    transform: scale(1.05);
+}
