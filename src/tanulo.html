@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Tanulással eltöltött idő</title>
     <style>
-        /* Body marad az eredeti háttérrel */
         body {
             font-family: Verdana, Arial;
             text-align: center;
@@ -15,15 +14,14 @@
             color: #FEFAE0;
         }
 
-        /* Krémes kávé hangulat színek */
         :root {
-            --counter-bg: #6B4C3B; /* közép barna számláló */
-            --text-highlight: #D4A373; /* aranybarna kiemelés */
-            --message-bg: rgba(243, 229, 171, 0.8); /* világos krémes üzenet háttér átlátszó */
-            --message-text: #4B2E2E; /* sötétebb barna szöveg */
-            --button-bg: #A67B5B; /* gomb alap */
-            --button-hover: #C89F7B; /* gomb hover */
-            --button-text: #FEFAE0; /* gomb szöveg */
+            --counter-bg: #6B4C3B;
+            --text-highlight: #D4A373;
+            --message-bg: rgba(243, 229, 171, 0.8);
+            --message-text: #4B2E2E;
+            --button-bg: #A67B5B;
+            --button-hover: #C89F7B;
+            --button-text: #FEFAE0;
         }
 
         h1 {
@@ -31,33 +29,40 @@
             margin-bottom: 40px;
         }
 
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
         #counter {
             font-size: 64px;
             font-weight: bold;
-            margin: 20px 0;
             color: var(--text-highlight);
             background-color: var(--counter-bg);
             padding: 20px;
             border-radius: 15px;
-            display: inline-block;
             min-width: 250px;
         }
 
         #message {
             font-size: 24px;
-            margin-top: 20px;
             color: var(--message-text);
             background-color: var(--message-bg);
-            display: inline-block;
             padding: 15px 25px;
             border-radius: 12px;
-            margin-bottom: 30px;
+        }
+
+        /* ÚJ: Gombok egymás mellé */
+        .button-row {
+            display: flex;
+            gap: 20px;
         }
 
         button {
             font-size: 20px;
             padding: 12px 25px;
-            margin: 10px;
             cursor: pointer;
             border: none;
             border-radius: 10px;
@@ -73,17 +78,23 @@
 </head>
 <body>
 
-<h1>Tanulással eltöltött idő</h1>
+<div class="container">
 
-<div id="counter">00:00:00</div>
-<div id="message">Összesen: 0 Ft</div>
+    <h1>Tanulással eltöltött idő</h1>
 
-<button id="startBtn">Indítás</button>
-<button id="stopBtn" disabled>Leállítás</button>
+    <div id="counter">00:00:00</div>
+    <div id="message">Összesen: 0 Ft</div>
+
+    <div class="button-row">
+        <button id="startBtn">Indítás</button>
+        <button id="stopBtn" disabled>Leállítás</button>
+    </div>
+
+</div>
 
 <script>
-    let count = 0; // másodpercek száma
-    let totalFt = 0; // összegyűjtött Ft
+    let count = 0;
+    let totalFt = 0;
     let timer = null;
 
     const counter = document.getElementById("counter");
