@@ -15,15 +15,16 @@
         }
 
         :root {
-            --counter-bg: #6B4C3B;
-            --text-highlight: #D4A373;
-            --message-bg: rgba(243, 229, 171, 0.8);
-            --message-text: #4B2E2E;
-            --button-bg: #A67B5B;
-            --button-hover: #C89F7B;
-            --button-text: #FEFAE0;
-        }
-
+                --counter-bg: #283618;
+                --text-highlight: #C3A87F;
+                --message-bg: #FEFAE0;
+                --message-text: #14120E;
+                --button-bg: #606C38;
+                --button-hover: #87551D;
+                --button-text: #FEFAE0;
+                --accent-strong: #6A2C0F;
+                --accent-dark: #44170D;
+            }
         h1 {
             font-size: 36px;
             margin-bottom: 40px;
@@ -54,7 +55,6 @@
             border-radius: 12px;
         }
 
-        /* ÚJ: Gombok egymás mellé */
         .button-row {
             display: flex;
             gap: 20px;
@@ -86,60 +86,60 @@
     <div id="message">Összesen: 0 Ft</div>
 
     <div class="button-row">
-        <button id="startBtn">Indítás</button>
-        <button id="stopBtn" disabled>Leállítás</button>
+        <button id="startStopBtn">Indítás</button>
+        <button id="resetBtn">Visszaállítás</button>
     </div>
 
-</div>
+    <script>
+        let count = 0;
+        let totalFt = 0;
+        let timer = null;
 
-<script>
-    let count = 0;
-    let totalFt = 0;
-    let timer = null;
+        const counter = document.getElementById("counter");
+        const message = document.getElementById("message");
+        const startStopBtn = document.getElementById("startStopBtn");
+        const resetBtn = document.getElementById("resetBtn");
 
-    const counter = document.getElementById("counter");
-    const message = document.getElementById("message");
-    const startBtn = document.getElementById("startBtn");
-    const stopBtn = document.getElementById("stopBtn");
+        function formatTime(seconds) {
+            let hrs = Math.floor(seconds / 3600);
+            let mins = Math.floor((seconds % 3600) / 60);
+            let secs = seconds % 60;
 
-    function formatTime(seconds) {
-        let hrs = Math.floor(seconds / 3600);
-        let mins = Math.floor((seconds % 3600) / 60);
-        let secs = seconds % 60;
+            hrs = String(hrs).padStart(2, '0');
+            mins = String(mins).padStart(2, '0');
+            secs = String(secs).padStart(2, '0');
 
-        hrs = String(hrs).padStart(2, '0');
-        mins = String(mins).padStart(2, '0');
-        secs = String(secs).padStart(2, '0');
-
-        return `${hrs}:${mins}:${secs}`;
-    }
-
-    startBtn.addEventListener("click", () => {
-        if (timer === null) {
-            timer = setInterval(() => {
-                count++;
-                counter.textContent = formatTime(count);
-
-                // minden új perc
-                if (count % 60 === 0) {
-                    totalFt += 10;
-                    message.textContent = `Tanulás alatt összesen: ${totalFt} Ft (1 perc = 10 Ft)`;
-                }
-
-            }, 1000);
-
-            startBtn.disabled = true;
-            stopBtn.disabled = false;
+            return `${hrs}:${mins}:${secs}`;
         }
-    });
 
-    stopBtn.addEventListener("click", () => {
-        clearInterval(timer);
-        timer = null;
-        startBtn.disabled = false;
-        stopBtn.disabled = true;
-    });
-</script>
+        startStopBtn.addEventListener("click", () => {
+            if (timer === null) {
+                // indítás
+                timer = setInterval(() => {
+                    count++;
+                    counter.textContent = formatTime(count);
 
+                    if (count % 60 === 0) {
+                        totalFt += 10;
+                        message.textContent = `Tanulás alatt összesen: ${totalFt} Ft (1 perc = 10 Ft)`;
+                    }
+                }, 1000);
+                startStopBtn.textContent = "Megállítás";
+            } else {
+                // megállítás
+                clearInterval(timer);
+                timer = null;
+                startStopBtn.textContent = "Indítás";
+            }
+        });
+
+        resetBtn.addEventListener("click", () => {
+            clearInterval(timer);
+            timer = null;
+            count = 0;
+            counter.textContent = "00:00:00";
+            startStopBtn.textContent = "Indítás";
+        });
+    </script>
 </body>
 </html>
