@@ -10,29 +10,42 @@
     <h4>Üdvözlünk a CoffeeDate oldalán! Ha először vagy itt, kérlek hozz létre egy profilt!</h4>
 
     <div class="loginbox">
-        <label class="logintext" for="username">Felhasználónév:</label>
-        <input class="logininput" type="text" id="username" name="username" autocomplete="off" maxlength="12"><br>
+        <form action="kavezo.html" autocomplete="off">
+            <div class="logincontainer">
+                Felhasználónév:<br>
+                Nem:<br>
+                Szak:<br>
+                Válassz egy italt:
+            </div>
+            <div class="logincontainer" style="text-align:right">
+                <input type="text" id="username" maxlength="12"><br>
+                <input type="text" id="gender" maxlength="12"><br>
+                <input type="text" id="course" maxlength="12"><br><br>
+            </div>
+            <div style="text-align:center; width=100%">
+                <img class="drinkchoice" src="../doc/ui/coffee_placeholder.png" alt="kávé">
+                <img class="drinkchoice" src="../doc/ui/coffee_placeholder.png" alt="tea"><br>
+                <input type="radio" id="drink" value="coffee" checked>
+                <input type="radio" id="drink2" value="tea"><br>
+                <input type="submit" value="Kész!" onclick="test();">
+            </div>
+        </form>
 
-        <label class="logintext" for="gender">Nem:</label>
-        <input class="logininput" type="text" id="gender" name="gender" autocomplete="off" maxlength="12"><br>
-
-        <label class="logintext" for="course">Szak:</label>
-        <input class="logininput" type="text" id="course" name="course" autocomplete="off" maxlength="12"><br>
-
-        <label class="logintext" for="drink">Válassz egy italt:</label><br>
-        <img class="logintext" src="../doc/ui/coffee_placeholder.png" alt="kávé">
-        <img class="logintext" src="../doc/ui/coffee_placeholder.png" alt="tea"><br>
-        <input class="loginbutton" type="radio" id="drink" name="drink" value="coffee" checked>
-        <input class="loginbutton" type="radio" id="drink" name="drink" value="tea"><br>
-
-        <input class="loginbutton" type="submit" value="Kész!">
+        <!--<script>
+            function test() {
+                let name = document.getElementById("username").value;
+                alert(name);
+            }
+        </script>-->
     </div>
 
     <h4>Vagy már van profilod? Akkor lépj be a kódoddal:</h4>
 
-    <div class="loginbox">
-        <input class="logininput" type="text">
+    <div class="loginbox" style="text-align:center">
+        <input type="text"><br>
+        <input type="submit" value="Kész!" onclick="kavezo.html">
     </div>
 
+    <h6>Készítette: Juhász Benedek (W2GZ9C), Moldván Gréta (), Szendrei Cintia Rita (E3KS5H)</h6>
 </body>
 </html>
