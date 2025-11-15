@@ -10,7 +10,7 @@
     <h4>Üdvözlünk a CoffeeDate oldalán! Ha először vagy itt, kérlek hozz létre egy profilt!</h4>
 
     <div class="loginbox">
-        <form action="kavezo.html">
+        <form action="kavezo.html" autocomplete="off">
             <div class="logincontainer">
                 <label for="username">Felhasználónév:</label><br>
                 <label for="gender">Nem:</label><br>
@@ -18,16 +18,16 @@
                 Válassz egy italt:
             </div>
             <div class="logincontainer" style="text-align:right">
-                <input type="text" id="username" maxlength="12"><br>
-                <input type="text" id="gender" maxlength="12"><br>
-                <input type="text" id="course" maxlength="12"><br><br>
+                <input type="text" id="username" name="username" maxlength="12"><br>
+                <input type="text" id="gender" name="gender" maxlength="12"><br>
+                <input type="text" id="course" name="course" maxlength="12"><br><br>
             </div>
             <div style="text-align:center; width=100%">
                 <label for="coffee"><img class="drinkchoice" src="../doc/ui/coffee_placeholder.png" alt="kávé"></label>
                 <label for="tea"><img class="drinkchoice" src="../doc/ui/coffee_placeholder.png" alt="tea"></label><br>
-                <input type="radio" id="coffee" value="coffee" checked>
-                <input type="radio" id="tea" value="tea"><br>
-                <input type="submit" value="Kész!" onclick="test();">
+                <input type="radio" id="coffee" name="drink" value="coffee" checked>
+                <input type="radio" id="tea" name="drink" value="tea"><br>
+                <input type="submit" value="Kész!">
             </div>
         </form>
 
@@ -39,10 +39,11 @@
         </script>-->
     </div>
 
+    <label for="logincode"></label>
     <h4>Vagy már van profilod? Akkor lépj be a kódoddal:</h4>
 
     <div class="loginbox" style="text-align:center">
-        <input type="text"><br>
+        <input type="text" id="logincode" name="logincode"><br>
         <input type="submit" value="Kész!" onclick="kavezo.html">
     </div>
 
