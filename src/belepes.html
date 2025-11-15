@@ -23,20 +23,22 @@
                 <input type="text" id="course" name="course" maxlength="12"><br><br>
             </div>
             <div style="text-align:center; width=100%">
-                <label for="coffee"><img class="drinkchoice" src="../doc/ui/coffee_placeholder.png" alt="kávé"></label>
-                <label for="tea"><img class="drinkchoice" src="../doc/ui/coffee_placeholder.png" alt="tea"></label><br>
+                <label for="coffee"><img class="drinkchoice" src="../doc/ui/coffee.png" alt="kávé"></label>
+                <label for="tea"><img class="drinkchoice" src="../doc/ui/tea.png" alt="tea"></label><br>
                 <input type="radio" id="coffee" name="drink" value="coffee" checked>
                 <input type="radio" id="tea" name="drink" value="tea"><br>
-                <input type="submit" value="Kész!">
+                <input type="submit" value="Kész!" onclick="saveVariables()">
             </div>
         </form>
 
-        <!--<script>
-            function test() {
-                let name = document.getElementById("username").value;
-                alert(name);
+        <script>
+            function saveVariables() {
+                name = document.getElementById("username").value;
+                drink = document.querySelector('input[name="drink"]:checked').value;
+                localStorage.setItem("username",name);
+                localStorage.setItem("drink",drink);
             }
-        </script>-->
+        </script>
     </div>
 
     <label for="logincode"></label>
