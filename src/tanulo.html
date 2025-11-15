@@ -2,144 +2,94 @@
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <title>Tanulással eltöltött idő</title>
-    <style>
-        body {
-            font-family: Verdana, Arial;
-            text-align: center;
-            margin-top: 100px;
-            background-color: #44270D;
-            background-image: url("../doc/ui/bg_bean.png");
-            background-size: auto;
-            color: #FEFAE0;
-        }
-
-        :root {
-                --counter-bg: #283618;
-                --text-highlight: #C3A87F;
-                --message-bg: #FEFAE0;
-                --message-text: #14120E;
-                --button-bg: #606C38;
-                --button-hover: #87551D;
-                --button-text: #FEFAE0;
-                --accent-strong: #6A2C0F;
-                --accent-dark: #44170D;
-            }
-        h1 {
-            font-size: 36px;
-            margin-bottom: 40px;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 25px;
-        }
-
-        #counter {
-            font-size: 64px;
-            font-weight: bold;
-            color: var(--text-highlight);
-            background-color: var(--counter-bg);
-            padding: 20px;
-            border-radius: 15px;
-            min-width: 250px;
-        }
-
-        #message {
-            font-size: 24px;
-            color: var(--message-text);
-            background-color: var(--message-bg);
-            padding: 15px 25px;
-            border-radius: 12px;
-        }
-
-        .button-row {
-            display: flex;
-            gap: 20px;
-        }
-
-        button {
-            font-size: 20px;
-            padding: 12px 25px;
-            cursor: pointer;
-            border: none;
-            border-radius: 10px;
-            background-color: var(--button-bg);
-            color: var(--button-text);
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: var(--button-hover);
-        }
-    </style>
+    <title>CoffeeDate - Tanulj Kávésan!</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>CoffeeDate - Tanulj Kávésan!</h1>
 
-<div class="container">
+    <div class="counter">
+        <h2>Tanulással eltöltött idő:</h2>
+        <div class="counternumber" id="counter" style="background-color:#87551D; color:#44270D">00:00:00</div>
+        <h3>A tanulás alatt ennyi pénzt szereztél:</h3>
+        <div class="counternumber" id="message">0 Ft</div><br>
+        <div>
+            <button class="counterbutton" id="startStopBtn">Indítás</button>
+            <button class="counterbutton" id="resetBtn">Visszaállítás</button>
+        </div>
 
-    <h1>Tanulással eltöltött idő</h1>
+        <script>
+            let count = 0;
+            let totalFt = 0;
+            let timer = null;
 
-    <div id="counter">00:00:00</div>
-    <div id="message">Összesen: 0 Ft</div>
+            const counter = document.getElementById("counter");
+            const message = document.getElementById("message");
+            const startStopBtn = document.getElementById("startStopBtn");
+            const resetBtn = document.getElementById("resetBtn");
 
-    <div class="button-row">
-        <button id="startStopBtn">Indítás</button>
-        <button id="resetBtn">Visszaállítás</button>
-    </div>
+            function formatTime(seconds) {
+                let hrs = Math.floor(seconds / 3600);
+                let mins = Math.floor((seconds % 3600) / 60);
+                let secs = seconds % 60;
 
-    <script>
-        let count = 0;
-        let totalFt = 0;
-        let timer = null;
+                hrs = String(hrs).padStart(2, '0');
+                mins = String(mins).padStart(2, '0');
+                secs = String(secs).padStart(2, '0');
 
-        const counter = document.getElementById("counter");
-        const message = document.getElementById("message");
-        const startStopBtn = document.getElementById("startStopBtn");
-        const resetBtn = document.getElementById("resetBtn");
+                return `${hrs}:${mins}:${secs}`;
+            }
 
-        function formatTime(seconds) {
-            let hrs = Math.floor(seconds / 3600);
-            let mins = Math.floor((seconds % 3600) / 60);
-            let secs = seconds % 60;
+            startStopBtn.addEventListener("click", () => {
+                if (timer === null) {
+                    // indítás
+                    timer = setInterval(() => {
+                        count++;
+                        counter.textContent = formatTime(count);
 
-            hrs = String(hrs).padStart(2, '0');
-            mins = String(mins).padStart(2, '0');
-            secs = String(secs).padStart(2, '0');
+                        if (count % 60 === 0) {
+                            totalFt += 10;
+                            message.textContent = `${totalFt} Ft`;
+                        }
+                    }, 1000);
+                    startStopBtn.textContent = "Megállítás";
+                    counter.style.color = "#87551D";
+                    counter.style.background= "#C3A87F";
+                } else {
+                    // megállítás
+                    clearInterval(timer);
+                    timer = null;
+                    startStopBtn.textContent = "Indítás";
+                    counter.style.color = "#44270D";
+                    counter.style.background= "#87551D";
+                }
+            });
 
-            return `${hrs}:${mins}:${secs}`;
-        }
-
-        startStopBtn.addEventListener("click", () => {
-            if (timer === null) {
-                // indítás
-                timer = setInterval(() => {
-                    count++;
-                    counter.textContent = formatTime(count);
-
-                    if (count % 60 === 0) {
-                        totalFt += 10;
-                        message.textContent = `Tanulás alatt összesen: ${totalFt} Ft (1 perc = 10 Ft)`;
-                    }
-                }, 1000);
-                startStopBtn.textContent = "Megállítás";
-            } else {
-                // megállítás
+            resetBtn.addEventListener("click", () => {
                 clearInterval(timer);
                 timer = null;
+                count = 0;
+                counter.textContent = "00:00:00";
                 startStopBtn.textContent = "Indítás";
-            }
-        });
+                counter.style.color = "#44270D";
+                counter.style.background= "#87551D";
+            });
+        </script>
+    </div>
 
-        resetBtn.addEventListener("click", () => {
-            clearInterval(timer);
-            timer = null;
-            count = 0;
-            counter.textContent = "00:00:00";
-            startStopBtn.textContent = "Indítás";
-        });
+    <div class="stage_right" id="stage">
+        <img src="../doc/ui/coffee_placeholder.png" id="coffee" class="coffee" alt="Kávé NPC">
+        <script src="kavezo.js"></script>
+    </div>
+
+    <div class="menu_right">
+        <div class="menubutton" id="fiokBtn">Fiók</div>
+        <div class="menubutton" id="tanulasBtn">Tanulás</div>
+    </div>
+    <script>
+        // gombok
+        document.getElementById('fiokBtn').onclick = () => alert('Fiók megnyitása (helyőrző)');
+        document.getElementById('tanulasBtn').onclick = () => alert('Tanulás oldal (helyőrző)');
     </script>
 </body>
 </html>
