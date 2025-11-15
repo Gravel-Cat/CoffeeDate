@@ -1,5 +1,5 @@
 const stage = document.getElementById('stage');
-const coffee = document.getElementById('coffee');
+const coffee = document.getElementById('drink');
 
 let posX = 200, posY = 300;
 let dirX = 1;
