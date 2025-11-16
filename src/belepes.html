@@ -13,14 +13,14 @@
         <form action="kavezo.html" autocomplete="off">
             <div class="logincontainer">
                 <label for="username">Felhasználónév:</label><br>
-                <label for="gender">Nem:</label><br>
+                <label for="code">Neptun-kód:</label><br>
                 <label for="course">Szak:</label><br>
                 Válassz egy italt:
             </div>
             <div class="logincontainer" style="text-align:right">
                 <input type="text" id="username" name="username" maxlength="12"><br>
-                <input type="text" id="gender" name="gender" maxlength="12"><br>
-                <input type="text" id="course" name="course" maxlength="12"><br><br>
+                <input type="text" id="code" name="code" maxlength="6"><br>
+                <input type="text" id="course" name="course" maxlength="32"><br><br>
             </div>
             <div style="text-align:center; width=100%">
                 <label for="coffee"><img class="drinkchoice" src="../doc/ui/coffee.png" alt="kávé"></label>
@@ -31,14 +31,7 @@
             </div>
         </form>
 
-        <script>
-            function saveVariables() {
-                name = document.getElementById("username").value;
-                drink = document.querySelector('input[name="drink"]:checked').value;
-                localStorage.setItem("username",name);
-                localStorage.setItem("drink",drink);
-            }
-        </script>
+        <script src="adatkiment.js"></script>
     </div>
 
     <label for="logincode"></label>

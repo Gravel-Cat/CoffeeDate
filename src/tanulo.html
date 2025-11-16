@@ -7,8 +7,9 @@
 </head>
 <body>
     <h1>CoffeeDate - Tanulj Kávésan!</h1>
+    <h3 id="cafename">név (kód), szak hallgató kávézója</h3>
 
-    <div class="counter">
+    <div class="sidemenu">
         <h2>Tanulással eltöltött idő:</h2>
         <div class="counternumber" id="counter" style="background-color:#87551D; color:#44270D">00:00:00</div>
         <h3>A tanulás alatt ennyi pénzt szereztél:</h3>
@@ -83,13 +84,14 @@
     </div>
 
     <div class="menu_right">
-        <div class="menubutton" id="fiokBtn">Fiók</div>
-        <div class="menubutton" id="tanulasBtn">Tanulás</div>
+        <div class="menubutton" id="profile" style="background-image:url('../doc/ui/button_profile.png')"></div>
+        <div class="menubutton" id="cafe"  style="background-image:url('../doc/ui/button_cafe.png')"></div>
     </div>
+
+    <script src="adatbetolt.js"></script>
     <script>
-        // gombok
-        document.getElementById('fiokBtn').onclick = () => alert('Fiók megnyitása (helyőrző)');
-        document.getElementById('tanulasBtn').onclick = () => alert('Tanulás oldal (helyőrző)');
+        document.getElementById('profile').onclick = () => window.open('fiok.html', '_self');
+        document.getElementById('cafe').onclick = () => window.open('kavezo.html', '_self');
     </script>
 
     <h6>Készítette: Juhász Benedek (W2GZ9C), Moldván Gréta (AO5J4G), Szendrei Cintia Rita (E3KS5H)</h6>
