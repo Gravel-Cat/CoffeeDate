@@ -10,7 +10,7 @@
     <h4>Üdvözlünk a CoffeeDate oldalán! Ha először vagy itt, kérlek hozz létre egy profilt!</h4>
 
     <div class="loginbox">
-        <form action="kavezo.html" autocomplete="off">
+        <form action="kavezo.html" method="post" autocomplete="off">
             <div class="logincontainer">
                 <label for="username">Felhasználónév:</label><br>
                 <label for="code">Neptun-kód:</label><br>
@@ -27,10 +27,9 @@
                 <label for="tea"><img class="drinkchoice" src="../doc/ui/tea.png" alt="tea"></label><br>
                 <input type="radio" id="coffee" name="drink" value="coffee" checked>
                 <input type="radio" id="tea" name="drink" value="tea"><br>
-                <input type="submit" value="Kész!" onclick="saveVariables()">
+                <input type="submit" value="Kész!" onclick="saveVariables(1)">
             </div>
         </form>
-
         <script src="adatkiment.js"></script>
     </div>
 
