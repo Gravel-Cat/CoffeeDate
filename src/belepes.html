@@ -24,10 +24,18 @@
             </div>
             <div style="text-align:center; width=100%">
                 <label for="coffee"><img class="drinkchoice" src="../doc/ui/coffee.png" alt="kávé"></label>
-                <label for="tea"><img class="drinkchoice" src="../doc/ui/tea.png" alt="tea"></label><br>
+                <label for="tea"><img class="drinkchoice" src="../doc/ui/tea.png" alt="tea"></label>
+                <label for="matcha"><img class="drinkchoice" src="../doc/ui/matcha.png" alt="tea"></label>
+                <label for="choco"><img class="drinkchoice" src="../doc/ui/choco.png" alt="tea"></label><br>
+                <label for="coffee" class="drinktext">Coffee</label>
+                <label for="tea" class="drinktext">Tea</label>
+                <label for="matcha" class="drinktext">Matcha</label>
+                <label for="choco" class="drinktext">Csoki</label><br>
                 <input type="radio" id="coffee" name="drink" value="coffee" checked>
-                <input type="radio" id="tea" name="drink" value="tea"><br>
-                <input type="submit" value="Kész!" onclick="saveVariables(1)">
+                <input type="radio" id="tea" name="drink" value="tea">
+                <input type="radio" id="matcha" name="drink" value="matcha">
+                <input type="radio" id="choco" name="drink" value="choco"><br>
+                <input type="submit" value="Kész!" onclick="saveNewProfile()">
             </div>
         </form>
         <script src="adatkiment.js"></script>

@@ -40,7 +40,7 @@ function animate(timestamp) {
         }
 
         // kávé magassága (padlóhoz igazítva)
-        posY = stageH - coffeeH - 50 + verticalBob;
+        posY = stageH - coffeeH - 30 + verticalBob;
 
         coffee.style.left = posX + "px";
         coffee.style.top = posY + "px";
