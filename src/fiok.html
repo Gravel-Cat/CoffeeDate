@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>CoffeeDate - Tanulj Kávésan!</h1>
-    <h3 id="cafename">név (kód), szak hallgató kávézója</h3>
+    <h3 id="cafename">név (kód), szak hallgató kávézója -o- Összeg: 0Ft</h3>
 
     <div class="sidemenu">
         <h2>Profil szerkesztése:</h2>
@@ -18,21 +18,21 @@
             <input type="text" id="username" name="username" maxlength="12"><br>
             <label for="code">Neptun-kód:</label><br>
             <input type="text" id="code" name="code" maxlength="6"><br>
-            <label for="course">Szak:</label><br>
-            <input type="text" id="course" name="course" maxlength="32"><br><br>
+            <label for="cname">Kávé neve:</label><br>
+            <input type="text" id="cname" name="cname" maxlength="12"><br><br>
             <input type="submit" value="Kész!" onclick="saveProfile()">
         </form>
     </div>
     <script src="adatkiment.js"></script>
 
     <div class="stage_right" id="stage">
-        <img src="../doc/ui/coffee.png" id="drink" class="drink" alt="Kávé NPC" style="height:180;width:120">
+        <img src="../doc/ui/coffee.png" id="drinkmain" class="drink" alt="Kávé NPC" style="height:180;width:120">
         <img src="../doc/ui/empty.png" id="spot1" alt="spot1" style="height:480px;margin:0 -18.5px">
         <img src="../doc/ui/empty.png" id="spot2" alt="spot2" style="height:480px;margin:0 13px">
         <img src="../doc/ui/empty.png" id="spot3" alt="spot3" style="height:480px;margin:0 -18.5px">
         <img src="../doc/ui/empty.png" id="spot4" alt="spot4" style="height:480px;margin:0 13px">
         <img src="../doc/ui/empty.png" id="spot5" alt="spot5" style="height:480px;margin:0 -18.5px">
-        <script src="kavezo.js"></script>
+        <script src="kavezo_fo.js"></script>
     </div>
 
     <div class="menu_right">

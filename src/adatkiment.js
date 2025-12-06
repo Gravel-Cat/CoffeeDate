@@ -1,27 +1,32 @@
 function saveNewProfile() {
     name = document.getElementById("username").value;
     code = document.getElementById("code").value;
-    course = document.getElementById("course").value;
-    drink = document.querySelector('input[name="drink"]:checked').value;
+    cname = document.getElementById("cname").value;
+    drinkmain = document.querySelector('input[name="drinkmain"]:checked').value;
+    const money = 0;
+    const moneyJSON = JSON.stringify(money);
     localStorage.setItem("username",name);
     localStorage.setItem("code",code);
-    localStorage.setItem("course",course);
-    localStorage.setItem("drink",drink);
+    localStorage.setItem("cname",cname);
+    localStorage.setItem("drinkmain",drinkmain);
+    localStorage.setItem("money",moneyJSON);
 
-    localStorage.setItem("spot1","empty");
-    localStorage.setItem("spot2","empty");
-    localStorage.setItem("spot3","empty");
-    localStorage.setItem("spot4","empty");
-    localStorage.setItem("spot5","empty");
+    const empty = "empty";
+    const emptyJSON = JSON.stringify(empty);
+    localStorage.setItem("spot1",emptyJSON);
+    localStorage.setItem("spot2",emptyJSON);
+    localStorage.setItem("spot3",emptyJSON);
+    localStorage.setItem("spot4",emptyJSON);
+    localStorage.setItem("spot5",emptyJSON);
 }
 
 function saveProfile() {
     name = document.getElementById("username").value;
     code = document.getElementById("code").value;
-    course = document.getElementById("course").value;
+    cname = document.getElementById("cname").value;
     localStorage.setItem("username",name);
     localStorage.setItem("code",code);
-    localStorage.setItem("course",course);
+    localStorage.setItem("cname",cname);
 }
 
 function saveFurniture() {
@@ -41,20 +46,3 @@ function saveFurniture() {
     localStorage.setItem("spot4",value4);
     localStorage.setItem("spot5",value5);
 }
-
-//    spot1 = document.getElementById("spot1");
-//    text1 = spot1.options[spot1.selectedIndex].text
-//    spot2 = document.getElementById("spot2");
-//    text2 = spot2.options[spot2.selectedIndex].text
-//    spot3 = document.getElementById("spot3");
-//    text3 = spot3.options[spot3.selectedIndex].text
-//    spot4 = document.getElementById("spot4");
-//    text4 = spot4.options[spot4.selectedIndex].text
-//    spot5 = document.getElementById("spot5");
-//    text5 = spot5.options[spot5.selectedIndex].text
-//
-//    localStorage.setItem("spot1",text1);
-//    localStorage.setItem("spot2",text2);
-//    localStorage.setItem("spot3",text3);
-//    localStorage.setItem("spot4",text4);
-//    localStorage.setItem("spot5",text5);

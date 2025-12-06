@@ -14,27 +14,27 @@
             <div class="logincontainer">
                 <label for="username">Felhasználónév:</label><br>
                 <label for="code">Neptun-kód:</label><br>
-                <label for="course">Szak:</label><br>
+                <label for="cname">Kávé neve:</label><br>
                 Válassz egy italt:
             </div>
             <div class="logincontainer" style="text-align:right">
                 <input type="text" id="username" name="username" maxlength="12"><br>
                 <input type="text" id="code" name="code" maxlength="6"><br>
-                <input type="text" id="course" name="course" maxlength="32"><br><br>
+                <input type="text" id="cname" name="cname" maxlength="12"><br><br>
             </div>
             <div style="text-align:center; width=100%">
                 <label for="coffee"><img class="drinkchoice" src="../doc/ui/coffee.png" alt="kávé"></label>
                 <label for="tea"><img class="drinkchoice" src="../doc/ui/tea.png" alt="tea"></label>
                 <label for="matcha"><img class="drinkchoice" src="../doc/ui/matcha.png" alt="tea"></label>
                 <label for="choco"><img class="drinkchoice" src="../doc/ui/choco.png" alt="tea"></label><br>
-                <label for="coffee" class="drinktext">Coffee</label>
+                <label for="coffee" class="drinktext">Kávé</label>
                 <label for="tea" class="drinktext">Tea</label>
                 <label for="matcha" class="drinktext">Matcha</label>
                 <label for="choco" class="drinktext">Csoki</label><br>
-                <input type="radio" id="coffee" name="drink" value="coffee" checked>
-                <input type="radio" id="tea" name="drink" value="tea">
-                <input type="radio" id="matcha" name="drink" value="matcha">
-                <input type="radio" id="choco" name="drink" value="choco"><br>
+                <input type="radio" id="coffee" name="drinkmain" value="coffee" checked>
+                <input type="radio" id="tea" name="drinkmain" value="tea">
+                <input type="radio" id="matcha" name="drinkmain" value="matcha">
+                <input type="radio" id="choco" name="drinkmain" value="choco"><br>
                 <input type="submit" value="Kész!" onclick="saveNewProfile()">
             </div>
         </form>
