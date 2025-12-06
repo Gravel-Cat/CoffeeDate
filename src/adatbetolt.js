@@ -8,8 +8,8 @@ const spot5 = document.getElementById("spot5");
 
 x.textContent = localStorage.getItem("username") + " (" + localStorage.getItem("code") + ") hallgató kávézója";
 drinkfile.src = "../doc/ui/" + localStorage.getItem("drink") + ".png";
-spot1.src = "../doc/ui/" + localStorage.getItem("spot1") + ".png";
-spot2.src = "../doc/ui/" + localStorage.getItem("spot2") + ".png";
-spot3.src = "../doc/ui/" + localStorage.getItem("spot3") + ".png";
-spot4.src = "../doc/ui/" + localStorage.getItem("spot4") + ".png";
-spot5.src = "../doc/ui/" + localStorage.getItem("spot5") + ".png";
+spot1.src = "../doc/ui/" + JSON.parse(localStorage.getItem("spot1")) + ".png";
+spot2.src = "../doc/ui/" + JSON.parse(localStorage.getItem("spot2")) + ".png";
+spot3.src = "../doc/ui/" + JSON.parse(localStorage.getItem("spot3")) + ".png";
+spot4.src = "../doc/ui/" + JSON.parse(localStorage.getItem("spot4")) + ".png";
+spot5.src = "../doc/ui/" + JSON.parse(localStorage.getItem("spot5")) + ".png";

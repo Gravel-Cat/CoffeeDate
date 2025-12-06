@@ -25,16 +25,21 @@ function saveProfile() {
 }
 
 function saveFurniture() {
-    document.getElementById("spotone").addEventListener("change", (e) => {localStorage.setItem("spot1",e.target.value);});
-//    spot2 = document.getElementById("spottwo").value;
-//    spot3 = document.getElementById("spotthree").value;
-//    spot4 = document.getElementById("spotfour").value;
-//    spot5 = document.getElementById("spotfive").value;
-//    localStorage.setItem("spot1",spot1);
-//    localStorage.setItem("spot2",spot2);
-//    localStorage.setItem("spot3",spot3);
-//    localStorage.setItem("spot4",spot4);
-//    localStorage.setItem("spot5",spot5);
+    const spot1 = document.getElementById("spotone").value;
+    const value1 = JSON.stringify(spot1);
+    const spot2 = document.getElementById("spottwo").value;
+    const value2 = JSON.stringify(spot2);
+    const spot3 = document.getElementById("spotthree").value;
+    const value3 = JSON.stringify(spot3);
+    const spot4 = document.getElementById("spotfour").value;
+    const value4 = JSON.stringify(spot4);
+    const spot5 = document.getElementById("spotfive").value;
+    const value5 = JSON.stringify(spot5);
+    localStorage.setItem("spot1",value1);
+    localStorage.setItem("spot2",value2);
+    localStorage.setItem("spot3",value3);
+    localStorage.setItem("spot4",value4);
+    localStorage.setItem("spot5",value5);
 }
 
 //    spot1 = document.getElementById("spot1");
