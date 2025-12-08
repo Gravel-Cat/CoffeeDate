@@ -77,6 +77,11 @@ select {
     border: none;
 }
 
+select:hover {
+    background-color: #87551D;
+    color: #44270D;
+}
+
 input[type=submit] {
     margin: 5px 0;
     color: #87551D;
