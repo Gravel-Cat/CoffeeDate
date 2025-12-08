@@ -1,7 +1,7 @@
-# COFFEE DATE - TANULJ KÁVÉSAN
-### Felhasználói dokumentáció
+- COFFEE DATE - TANULJ KÁVÉSAN -
+   Felhasználói dokumentáció
 
-**Mi is a CoffeeDate?**
+Mi is a CoffeeDate?
 - A CoffeeDate egy tanulói alkalmazás, ami arra a célra lett fejlesztve, hogy hallgatók tudjanak fókuszálni a hosszas
   tanulásra, közben izgalmassá téve azt. Erre a célra bónuszt kap a felhasználó tanulás közben (fiktív pénzt), amelyet
   el tud költeni számos dolgokra.
@@ -9,7 +9,7 @@
 - A CoffeeDate teljesen lokális alkalmazás, így nem szükséges internetkapcsolat a működéséhez. Az adatokat lokálisan
   tárolja a weblap, illetve egy "belépési kóddal" tud a felhasználó belépni és adatait betölteni.
 
-**Belépés**
+Belépés
 - A weblap betöltésekor megnyílik a belépési felület. Itt tud regisztrálni vagy belépni a felhasználó.
 - Regisztrációkor a felhasználó be tudja írni a nevét, neptun-kódját és tud adni az italjának egy nevet.
 - Ezután tud választani egy italt a négy megadott opció közül: kávé, tea, matcha vagy forró csoki. Ez fogja reprezentálni
@@ -18,18 +18,18 @@
 - Ellenkező esetben, a weblap alján ha beírja a belépési kódját a felhasználó, akkor be tudja importálni az eddigi
   adatait és változtatásait.
 
-**Kávézó**
+Kávézó
 - Belépés után a felhasználó a kávézó felületére lesz átvezetve, ahol egy üres kávézót és az italját fogja látni.
 - Ez a weblap főleg navigációs menüként funkciónál, a kávézó alatti gombokat használva el tudja érni a többi aloldalt.
 - Sorban a gombok: Fiók, Tanulás, Berendezés
 - Az aloldalakon megjelenik egy más színű Kávézó gomb, amely visszavezeti a felhasználót a kávézó főmenüjébe.
 
-**Fiók**
+Fiók
 - Ezen az aloldalon tudja megváltoztatni alapvető adatait a felhasználó.
 - Itt csak a nevét, kódját és az ital nevét tudja megváltoztatni a felhasználó.
 - Változtatások elmentése után a felhasználó kap egy újonnan generált kódot amellyel be tud lépni következő alkalommal.
 
-**Tanulás**
+Tanulás
 - Ezen az aloldalon a felhasználó tudja használó a fő tanulói funkciót.
 - Itt egy számlálót talál a felhasználó, amivel tudja mérni tanulási idejét két gomb segtségével. Itt percenként 10Ft
   jutalmat kap a felhasználó, amelyet a weblap észben tart és kiír a felhasználó számára.
@@ -37,7 +37,7 @@
 - A Visszaállítás gombbal az időzítőt lenullázza a felhasználó, és a weblap jóváírja a elért jutalmat a felhasználó
   profiljára, amelyet a kávézó felület fölötti szövegrészen láthat.
 
-**Berendezés**
+Berendezés
 - Ezen az aloldalon tudja berendezni saját kávézóját a felhasználó.
 - Az oldalmenüben 5 legördülő menüt használva, balról jobbra haladva tudja kiválasztani a felhasználó, hogy melyik
   helyre milyen bútort kíván elhelyezni.
@@ -47,5 +47,5 @@
 
 
 
-###### A CoffeeDate kódját Juhász Benedek (W2GZ9C), Moldván Gréta (AO5J4G) és Szendrei Cintia Rita (E3KS5H) írta.
-###### A weblap grafikáit és ezen dokumentációt Juhász Benedek (W2GZ9C) készítette.
+A CoffeeDate kódját Juhász Benedek (W2GZ9C), Moldván Gréta (AO5J4G) és Szendrei Cintia Rita (E3KS5H) írta.
+A weblap grafikáit és ezen dokumentációt Juhász Benedek (W2GZ9C) készítette.
